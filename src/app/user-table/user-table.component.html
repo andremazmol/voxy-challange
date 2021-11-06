@@ -1,6 +1,7 @@
 <div class="mat-elevation-z8 user-table">
-  <mat-form-field>
+  <mat-form-field class="search-box" appearance="outline">
     <input matInput type="text" (keyup)="doFilter($event)" placeholder="Search">
+    <mat-icon matSuffix>search</mat-icon>
   </mat-form-field>
   <table mat-table [dataSource]="dataSource" class="full-width-table" matSort aria-label="Elements">
 
