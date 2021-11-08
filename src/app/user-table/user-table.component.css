@@ -3,7 +3,8 @@
 }
 .user-table {
   width: 80%;
-  margin: 20px auto
+  margin: 20px auto;
+  min-width: 538px;
 }
 .search-box {
   margin-top: 10px;
@@ -21,5 +22,9 @@
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-suffix {
   top: 0.35em !important
+}
+
+::ng-deep .mat-paginator {
+  min-width: 538px;
 }
 

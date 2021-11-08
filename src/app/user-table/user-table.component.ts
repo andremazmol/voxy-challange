@@ -9,17 +9,19 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./user-table.component.css']
 })
 export class UserTableComponent implements AfterViewInit {
+  
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<UserTableItem>;
   dataSource = new MatTableDataSource(Users)
 
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
+  /** Columns displayed in the table */
   
   displayedColumns = ['email', 'firstName', 'lastName', 'primaryGroup', 'phoneNumber', 'hoursStudied'];
 
 
-
+  
+  /** Set sort and paginator */
   ngAfterViewInit(): void {
     
     this.dataSource.sort = this.sort;
@@ -27,11 +29,16 @@ export class UserTableComponent implements AfterViewInit {
     
   }
 
+  /** Filter data in table when user type into search box */
   doFilter(e: any) {
     this.dataSource.filter = e.target.value.trim().toLowerCase();
   }
 
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                 Mocked Data                                */
+/* -------------------------------------------------------------------------- */
 
 export interface UserTableItem {
   email: string;
